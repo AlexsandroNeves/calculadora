@@ -6,14 +6,20 @@ function App() {
 
   const numeros = ['+', '-', '*', '/', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 
-  const calc = () => {
-    setValor(eval(valor));
-  }
-
+  
   const clear = () => {
     setValor(" ")
   }
 
+  const calc = () => {
+  try {
+      setValor(eval(valor));
+    }
+    
+    catch (e) {
+    setValor("Valor invalido");
+  }
+} 
   const numClick = (e) => {
     setValor(valor + (e.target.value))
   }
